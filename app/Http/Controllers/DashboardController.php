@@ -13,9 +13,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        Alert::alert()->warning('WarningAlert','Lorem ipsum dolor sit amet.');
-
-        return view('backend.pages.dashboard');
+        $data = array();
+        $data['menu'] = "Dashboard";
+        $data['submenu'] = "";
+        return view('backend.pages.dashboard', $data);
     }
 
     /**

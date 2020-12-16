@@ -67,8 +67,8 @@
     <div class="header-logo"><img src="{{asset('/')}}{{$about->logo}}" alt="logo"></div>
         <nav class="menu menu--juno">
             <ul class="menu__list">
-            <li class="menu__item menu__item--current"><a href="{{route('index')}}" class="menu__link"><h4>Home</h4></a></li>
-            <li class="menu__item"><a href="{{route('about')}}" class="menu__link"><h4>About <i class="fa fa-caret-down" aria-hidden="true"></i></h4></a>
+            <li class="menu__item @if($menu=='Home')menu__item--current @endif"><a href="{{route('index')}}" class="menu__link"><h4>Home</h4></a></li>
+            <li class="menu__item  @if($menu=='About')menu__item--current @endif"  ><a href="{{route('about')}}" class="menu__link"><h4>About <i class="fa fa-caret-down" aria-hidden="true"></i></h4></a>
                     <ul class="child-menu">
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('ceoMessage')}}">Message of CEO</a></li>
@@ -80,7 +80,7 @@
                         <li><a href="{{route('esFaq')}}">FAQ</a></li>
                     </ul>
                 </li>
-                <li class="menu__item"><a href="{{route('services')}}" class="menu__link"><h4>Services <i class="fa fa-caret-down" aria-hidden="true"></i> </h4></a>
+                <li class="menu__item @if($menu=='Service')menu__item--current @endif"><a href="{{route('services')}}" class="menu__link"><h4>Services <i class="fa fa-caret-down" aria-hidden="true"></i> </h4></a>
                     <ul class="child-menu">
                         @foreach ($services as $service)
                         <li><a href="{{route('service.show', $service->id)}}">{{$service->title}}</a></li>
@@ -88,9 +88,9 @@
                         @endforeach
                     </ul>
                 </li>
-            <li class="menu__item"><a href="{{route('projects')}}" class="menu__link"><h4>Projects</h4></a></li>
-            <li class="menu__item"><a href="{{route('newsView')}}" class="menu__link"><h4>News</h4></a></li>
-            <li class="menu__item"><a href="{{route('esContact')}}" class="menu__link"><h4>Contact Us</h4></a></li>
+            <li class="menu__item @if($menu=='Project')menu__item--current @endif"><a href="{{route('projects')}}" class="menu__link"><h4>Projects</h4></a></li>
+            <li class="menu__item @if($menu=='News')menu__item--current @endif"><a href="{{route('newsView')}}" class="menu__link"><h4>News</h4></a></li>
+            <li class="menu__item @if($menu=='Contact')menu__item--current @endif"><a href="{{route('esContact')}}" class="menu__link"><h4>Contact Us</h4></a></li>
             </ul>
         </nav> 
     </div>

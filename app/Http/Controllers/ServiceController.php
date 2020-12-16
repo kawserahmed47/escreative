@@ -20,6 +20,8 @@ class ServiceController extends Controller
         $data = array();
         $data['sliders']= "";
         $data['services'] = Service::where('status',1)->get();
+        $data['menu']= "Service";
+        $data['submenu'] = "View-Service";
         return view('backend.pages.service.view', $data);
     }
 
@@ -30,7 +32,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.service.create');
+        $data = array();
+        $data['menu']= "Service";
+        $data['submenu'] = "Create-Service";
+        return view('backend.pages.service.create', $data);
     }
 
     /**
@@ -77,6 +82,7 @@ class ServiceController extends Controller
         if($service){
             $data = array();
             $data['title']="Services" ;
+            $data['menu']= "Service";
             $data['about']= About::first();
             $data['services'] = Service::where('status', 1)->get();
             $data['galleries'] = Gallery::where('status',1)->limit(4)->get();
@@ -93,9 +99,12 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service = Service::find($id);
-        if($service){
-            return view('backend.pages.service.edit')->with('service', $service);
+        $data= array();
+        $data['menu'] = "Service";
+        $data['submenu'] = "View-Service";
+        $data['service'] = Service::find($id);
+        if($data['service']){
+            return view('backend.pages.service.edit', $data);
         }
     }
 

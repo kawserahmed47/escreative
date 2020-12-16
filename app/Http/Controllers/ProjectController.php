@@ -17,7 +17,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $data = array();
         $data['projects'] = Project::where('status',1)->get();
+        $data['menu']= "Project";
+        $data['submenu'] = "View-Project";
         return view('backend.pages.project.view',$data);
     }
 
@@ -28,7 +31,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.project.create');
+        $data = array();
+        $data['menu']= "Project";
+        $data['submenu'] = "Create-Project";
+        return view('backend.pages.project.create', $data);
     }
 
     /**
@@ -80,7 +86,8 @@ class ProjectController extends Controller
         $project = Project::find($id);
         if($project){
             $data = array();
-            $data['title']="Services" ;
+            $data['title']="Project";
+            $data['menu']= "Project";
             $data['about']= About::first();
             $data['services'] = Service::where('status', 1)->get();
             $data['galleries'] = Gallery::where('status',1)->limit(4)->get();
@@ -97,9 +104,12 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::find($id);
-        if($project){
-            return view('backend.pages.project.edit')->with('project', $project);
+        $data = array();
+        $data['project'] = Project::find($id);
+        $data['menu']= "Project";
+        $data['submenu'] = "View-Project";
+        if($data['project']){
+            return view('backend.pages.project.edit', $data);
         }else{
             return 0;
         }

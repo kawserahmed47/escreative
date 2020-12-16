@@ -17,6 +17,8 @@ class AboutController extends Controller
     {
         $data = array();
         $data['about']= $ab = About::first();
+        $data['menu']= "About";
+        $data['submenu'] = "View-About";
         if($ab){
             return view('backend.pages.about.view', $data);
             
@@ -33,7 +35,10 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.about.create');
+        $data = array();
+        $data['menu']= "About";
+        $data['submenu'] = "Create-About";
+        return view('backend.pages.about.create', $data);
     }
 
     /**
@@ -194,8 +199,12 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        $about = About::find($id);
-        return view('backend.pages.about.edit')->with('about', $about);
+        $data = array();
+        $data['about'] = About::find($id);
+        $data['menu']= "About";
+        $data['submenu'] = "View-About";
+
+        return view('backend.pages.about.edit', $data);
     }
 
     /**

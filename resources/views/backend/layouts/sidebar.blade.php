@@ -26,8 +26,8 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview menu-open">
-        <a href="{{route('dashboard')}}" class="nav-link active">
+        <li class="nav-item has-treeview @if($menu == 'Dashboard') menu-open @endif ">
+          <a href="{{route('dashboard')}}" class="nav-link  @if($menu == 'Dashboard') active @endif">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
 
@@ -40,9 +40,9 @@
 
 
         {{-- Slider --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Slider') menu-open @endif ">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='Slider') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Slider
@@ -52,14 +52,14 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="{{url('/slider/create')}}" class="nav-link">
+            <a href="{{url('/slider/create')}}" class="nav-link @if($submenu=='Create-Slider') active @endif ">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Create</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="{{url('/slider')}}" class="nav-link">
+              <a href="{{url('/slider')}}" class="nav-link @if($submenu=='View-Slider') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View</p>
               </a>
@@ -70,9 +70,9 @@
         
 
         {{-- About --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='About') menu-open @endif">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='About') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               About
@@ -89,7 +89,7 @@
             </li> --}}
 
             <li class="nav-item">
-              <a href="{{url('/about')}}" class="nav-link">
+              <a href="{{url('/about')}}" class="nav-link @if($submenu=='View-About') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View</p>
               </a>
@@ -102,9 +102,9 @@
 
         
         {{-- Services --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Service') menu-open @endif">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='Service') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Services
@@ -114,14 +114,14 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="{{url('/service/create')}}" class="nav-link">
+            <a href="{{url('/service/create')}}" class="nav-link @if($submenu=='Create-Service') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Create</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="{{url('/service')}}" class="nav-link">
+              <a href="{{url('/service')}}" class="nav-link @if($submenu=='View-Service') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View</p>
               </a>
@@ -133,9 +133,9 @@
       
 
         {{--Recent Project --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Project') menu-open @endif">
 
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link @if($menu=='Project') active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                  Project
@@ -145,14 +145,14 @@
   
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{url('/project/create')}}" class="nav-link">
+              <a href="{{url('/project/create')}}" class="nav-link @if($submenu=='Create-Project') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
               </li>
   
               <li class="nav-item">
-              <a href="{{url('/project')}}" class="nav-link">
+              <a href="{{url('/project')}}" class="nav-link @if($submenu=='View-Project') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -163,9 +163,9 @@
   
         
         {{--Latest Blog --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='News') menu-open @endif">
 
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link @if($menu=='News') active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 News
@@ -175,14 +175,14 @@
   
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{route('news.create')}}" class="nav-link">
+              <a href="{{route('news.create')}}" class="nav-link @if($submenu=='Create-News') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
               </li>
   
               <li class="nav-item">
-              <a href="{{url('/news')}}" class="nav-link">
+              <a href="{{url('/news')}}" class="nav-link @if($submenu=='View-News') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -192,9 +192,9 @@
         </li>
 
         {{--Gallery--}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Gallery') menu-open @endif">
 
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link @if($menu=='Gallery') active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Gallery
@@ -204,14 +204,14 @@
   
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{route('gallery.create')}}" class="nav-link">
+              <a href="{{route('gallery.create')}}" class="nav-link @if($submenu=='Create-Gallery') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
               </li>
   
               <li class="nav-item">
-              <a href="{{route('gallery.index')}}" class="nav-link">
+              <a href="{{route('gallery.index')}}" class="nav-link @if($submenu=='View-Gallery') active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -221,9 +221,9 @@
         </li>
 
         {{--Testimonial --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Testimonial') menu-open @endif">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='Testimonial') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Testimonial
@@ -233,14 +233,14 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="{{route('testimonial.create')}}" class="nav-link">
+            <a href="{{route('testimonial.create')}}" class="nav-link @if($submenu=='Create-Testimonial') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Create</p>
               </a>
             </li>
 
             <li class="nav-item">
-            <a href="{{route('testimonial.index')}}" class="nav-link">
+            <a href="{{route('testimonial.index')}}" class="nav-link @if($submenu=='View-Testimonial') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View</p>
               </a>
@@ -250,9 +250,9 @@
         </li>
 
         {{--FAQ --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Faq') menu-open @endif">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='Faq') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               FAQ
@@ -262,14 +262,14 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="{{route('faq.create')}}" class="nav-link">
+            <a href="{{route('faq.create')}}" class="nav-link @if($submenu=='Create-Faq') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Create</p>
               </a>
             </li>
 
             <li class="nav-item">
-            <a href="{{route('faq.index')}}" class="nav-link">
+            <a href="{{route('faq.index')}}" class="nav-link @if($submenu=='View-Faq') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View</p>
               </a>
@@ -279,9 +279,9 @@
         </li>
 
         {{-- Message --}}
-        <li class="nav-item has-treeview">
-
-          <a href="#" class="nav-link">
+        <li class="nav-item has-treeview @if($menu=='Message') menu-open @endif">
+ 
+          <a href="#" class="nav-link @if($menu=='Message') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Message
@@ -291,14 +291,14 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="{{url('/quotation')}}" class="nav-link">
+            <a href="{{url('/quotation')}}" class="nav-link @if($submenu=='Quotation') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Quotaion</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="{{url('/contact')}}" class="nav-link">
+              <a href="{{url('/contact')}}" class="nav-link @if($submenu=='Contact') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact</p>
               </a>
@@ -308,9 +308,9 @@
         </li>
 
         {{-- Admin --}}
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview @if($menu=='Admin') menu-open @endif">
 
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link @if($menu=='Admin') active @endif">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Admin
@@ -327,7 +327,7 @@
             </li> --}}
 
             <li class="nav-item">
-              <a href="{{url('/admin')}}" class="nav-link">
+              <a href="{{url('/admin')}}" class="nav-link @if($submenu=='View-Admin') active @endif">
                 <i class="far fa-circle nav-icon"></i>
                 <p>List</p>
               </a>

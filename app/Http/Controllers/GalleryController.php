@@ -20,8 +20,11 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::where('status', 1)->get();
-        return view('backend.pages.gallery.view')->with('galleries', $galleries);
+        $data = array();
+        $data['menu']= "Gallery";
+        $data['submenu'] = "View-Gallery";
+        $data['galleries'] = Gallery::where('status', 1)->get();
+        return view('backend.pages.gallery.view', $data);
     }
 
     /**
@@ -31,7 +34,10 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.gallery.create');
+        $data = array();
+        $data['menu']= "Gallery";
+        $data['submenu'] = "Create-Gallery";
+        return view('backend.pages.gallery.create', $data);
     }
 
     /**
@@ -83,8 +89,11 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $gallery = Gallery::find($id);
-        return view('backend.pages.gallery.edit')->with('gallery', $gallery);
+        $data = array();
+        $data['gallery'] = Gallery::find($id);
+        $data['menu']= "Gallery";
+        $data['submenu'] = "View-Gallery";
+        return view('backend.pages.gallery.edit', $data);
     }
 
     /**

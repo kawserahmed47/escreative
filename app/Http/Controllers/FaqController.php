@@ -14,8 +14,11 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faqs = Faq::where('status', 1)->get();
-        return view('backend.pages.faq.view')->with('faqs', $faqs);
+        $data = array();
+        $data['faqs'] = Faq::where('status', 1)->get();
+        $data['menu']= "Faq";
+        $data['submenu'] = "View-Faq";
+        return view('backend.pages.faq.view', $data);
     }
 
     /**
@@ -25,7 +28,10 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.faq.create');
+        $data = array();
+        $data['menu']= "Faq";
+        $data['submenu'] = "Create-Faq";
+        return view('backend.pages.faq.create', $data);
     }
 
     /**
@@ -62,8 +68,11 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        $faq = Faq::find($id);
-        return view('backend.pages.faq.edit')->with('faq', $faq);
+        $data = array();
+        $data['faq'] = Faq::find($id);
+        $data['menu']= "Faq";
+        $data['submenu'] = "View-Faq";
+        return view('backend.pages.faq.edit', $data);
     }
 
     /**

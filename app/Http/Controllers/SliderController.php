@@ -22,6 +22,8 @@ class SliderController extends Controller
     {
         $data = array();
         $data['sliders']= Slider::where('status',1)->get();
+        $data['menu']= "Slider";
+        $data['submenu']= "View-Slider";
         return view('backend.pages.slider.view',$data);
     }
 
@@ -32,7 +34,10 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.slider.create');
+        $data = array();
+        $data['menu'] ="Slider";
+        $data['submenu'] = "Create-Slider";
+        return view('backend.pages.slider.create', $data);
     }
 
     /**
@@ -87,8 +92,11 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $slider = Slider::find($id);
-        return view('backend.pages.slider.edit')->with('slider', $slider);
+        $data = array();
+        $data['slider'] = Slider::find($id);
+        $data['menu'] = "Slider";
+        $data['submenu'] = "View-Slider";
+        return view('backend.pages.slider.edit', $data);
     }
 
     /**

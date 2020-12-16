@@ -17,6 +17,7 @@ class FrontController extends Controller
     public function index(){
         $data = array();
         $data['title']="Home" ;
+        $data['menu']= "Home";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -31,6 +32,7 @@ class FrontController extends Controller
     public function about(){
         $data = array();
         $data['title']="About Us" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -46,6 +48,7 @@ class FrontController extends Controller
     public function ceoMessage(){
         $data = array();
         $data['title']="CEO Message" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -60,6 +63,7 @@ class FrontController extends Controller
     public function contact(){
         $data = array();
         $data['title']="Contact Us" ;
+        $data['menu']= "Contact";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -75,6 +79,7 @@ class FrontController extends Controller
     public function services(){
         $data = array();
         $data['title']="Services" ;
+        $data['menu']= "Service";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -90,6 +95,7 @@ class FrontController extends Controller
     public function serviceDetails(){
         $data = array();
         $data['title']="Service Details" ;
+        $data['menu']= "Service";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -105,6 +111,7 @@ class FrontController extends Controller
     public function quotation(){
         $data = array();
         $data['title']="Quotation" ;
+        $data['menu']= "";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -119,6 +126,7 @@ class FrontController extends Controller
     public function faq(){
         $data = array();
         $data['title']="FAQ" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -165,6 +173,7 @@ class FrontController extends Controller
     public function news(){
         $data = array();
         $data['title']="News" ;
+        $data['menu']= "News";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -180,6 +189,7 @@ class FrontController extends Controller
     public function newsDetails(){
         $data = array();
         $data['title']="News Details" ;
+        $data['menu']= "News";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -193,6 +203,7 @@ class FrontController extends Controller
     public function gallery(){
         $data = array();
         $data['title']="Gallery" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -216,6 +227,7 @@ class FrontController extends Controller
     public function profile(){
         $data = array();
         $data['title']="Profile" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -231,6 +243,7 @@ class FrontController extends Controller
     public function mission(){
         $data = array();
         $data['title']="Mission" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -246,6 +259,7 @@ class FrontController extends Controller
     public function vision(){
         $data = array();
         $data['title']="Vision" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -261,6 +275,7 @@ class FrontController extends Controller
     public function history(){
         $data = array();
         $data['title']="History" ;
+        $data['menu']= "About";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -276,6 +291,7 @@ class FrontController extends Controller
     public function projects(){
         $data = array();
         $data['title']="Projects" ;
+        $data['menu']= "Project";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();
@@ -291,6 +307,7 @@ class FrontController extends Controller
     public function projectDetails(){
         $data = array();
         $data['title']="Project Details";
+        $data['menu']= "Project";
         $data['about']= About::first();
         $data['active_slider']= Slider::where('status', 2)->first();
         $data['sliders']= Slider::where('status', 1)->get();

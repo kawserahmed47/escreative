@@ -7,6 +7,9 @@ use App\Quotation;
 Use Alert;
 use Mail;
 use Session;
+use App\About;
+use App\Service;
+use App\Gallery;
 class QuotationController extends Controller
 {
     /**
@@ -16,8 +19,11 @@ class QuotationController extends Controller
      */
     public function index()
     {
-        $quotations = Quotation::all();
-        return view('backend.pages.message.quotation')->with('quotations', $quotations);
+        $data = array();
+        $data['quotations'] = Quotation::all();
+        $data['menu']= "Message";
+        $data['submenu'] = "Quotation";
+        return view('backend.pages.message.quotation', $data);
     }
 
     /**
@@ -29,6 +35,10 @@ class QuotationController extends Controller
     {
         $data = array();
         $data['title']="Quotation" ;
+        $data['menu']= "";
+        $data['about']= About::first();
+        $data['services'] = Service::where('status', 1)->get();
+        $data['galleries'] = Gallery::where('status',1)->limit(4)->get();
         return view('frontend.pages.quotation', $data);
     }
 

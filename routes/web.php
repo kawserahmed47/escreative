@@ -20,6 +20,7 @@ Route::get('/checkout',function(){
     return view('checkout');
 });
 
+
 Route::get('/','FrontController@index')->name('index');
 
 Route::get('/about-us','FrontController@about')->name('about');

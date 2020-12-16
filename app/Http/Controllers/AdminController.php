@@ -14,8 +14,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('backend.pages.admin.list')->with('users', $users);
+        $data = array();
+        $data['users'] = User::all();
+        $data['menu'] = "Admin";
+        $data['submenu'] = "View-Admin";
+        return view('backend.pages.admin.list', $data);
     }
 
     /**

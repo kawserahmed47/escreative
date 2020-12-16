@@ -18,6 +18,8 @@ class ContactController extends Controller
         $data = array();
         $data['title']="Contact Us" ;
         $data['contacts'] = Contact::all();
+        $data['menu']= "Message";
+        $data['submenu'] = "Contact";
         return view('backend.pages.message.contact',$data);
     }
 

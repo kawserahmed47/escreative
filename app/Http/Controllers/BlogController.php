@@ -19,6 +19,8 @@ class BlogController extends Controller
     public function index()
     {
         $data['news']= News::where('status',1)->get();
+        $data['menu']= "News";
+        $data['submenu'] = "View-News";
         return view('backend.pages.news.view', $data);
     }
 
@@ -29,7 +31,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.news.create');
+        $data['menu']= "News";
+        $data['submenu'] = "Create-News";
+        return view('backend.pages.news.create', $data);
     }
 
     /**
@@ -78,6 +82,7 @@ class BlogController extends Controller
         if($news){
             $data = array();
             $data['title']="News" ;
+            $data['menu']= "News";
             $data['about']= About::first();
             $data['services'] = Service::where('status', 1)->get();
             $data['galleries'] = Gallery::where('status',1)->limit(4)->get();
@@ -94,8 +99,11 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $news  = News::find($id);
-        return view('backend.pages.news.edit')->with('news', $news);
+        $data = array();
+        $data['news']  = News::find($id);
+        $data['menu']= "News";
+        $data['submenu'] = "View-News";
+        return view('backend.pages.news.edit', $data);
     }
 
     /**

@@ -14,8 +14,11 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::where('status', 1)->get();
-        return view('backend.pages.testimonial.view')->with('testimonials', $testimonials);
+        $data = array();
+        $data['testimonials'] = Testimonial::where('status', 1)->get();
+        $data['menu'] = "Testimonial";
+        $data['submenu'] = "View-Testimonial";
+        return view('backend.pages.testimonial.view', $data);
     }
 
     /**
@@ -25,7 +28,10 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.testimonial.create');
+        $data = array();
+        $data['menu'] = "Testimonial";
+        $data['submenu'] = "Create-Testimonial";
+        return view('backend.pages.testimonial.create', $data);
     }
 
     /**
@@ -62,8 +68,11 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        $testimonial = Testimonial::find($id);
-        return view('backend.pages.testimonial.edit')->with('testimonial', $testimonial);
+        $data = array();
+        $data['testimonial'] = Testimonial::find($id);
+        $data['menu'] = "Testimonial";
+        $data['submenu'] = "View-Testimonial";
+        return view('backend.pages.testimonial.edit', $data);
     }
 
     /**
